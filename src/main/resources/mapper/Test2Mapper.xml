@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yingchuang.dao.Test2Mapper">
+    <insert id="addTest2" parameterType="com.yingchuang.entity.Test2">
+        INSERT INTO test2 VALUES(NULL,#{question},#{answerA},#{answerB},#{answerC},#{answerD},#{rightAnswer},#{admin.id},0,#{power},#{questionCode})
+    </insert>
+    <update id="updateStatus" parameterType="com.yingchuang.entity.Test2">
+        UPDATE test2 SET status=0 WHERE adminid=#{adminid}
+    </update>
+    <update id="updatePower" parameterType="com.yingchuang.entity.Test2">
+        UPDATE test2 SET power=#{power} where adminid=#{adminid}
+    </update>
+</mapper>
